@@ -1,18 +1,18 @@
 import matplotlib.pyplot as plt
 
 def dda(x1, y1, x2, y2):
-    # Untuk menentukan deltax dan deltay
+    # Menghitung delta x dan delta y
     dx = x2 - x1
     dy = y2 - y1
     
-    # Menentukan langkah yang diperlukan
+    # Menentukan jumlah langkah yang diperlukan
     steps = int(max(abs(dx), abs(dy)))
     
-    # increment untuk x dan y
+    # Increment untuk setiap langkah
     x_increment = dx / steps
     y_increment = dy / steps
     
-    # Menyimpan titik-titik garis
+    # Titik awal
     x = x1
     y = y1
     
@@ -22,25 +22,25 @@ def dda(x1, y1, x2, y2):
     for _ in range(steps):
         x += x_increment
         y += y_increment
-        points.append((round(x), round(y)))  # Membulatkan nilai x dan y
+        points.append((round(x), round(y)))  # Membulatkan koordinat
     
     return points
 
-# Titik awal dan akhir
+# Titik awal dan akhir yang benar
 x1, y1 = 30, 20
 x2, y2 = 37, 27
 
-# Menggambar garis
+# Menghitung titik-titik garis menggunakan DDA
 points = dda(x1, y1, x2, y2)
 
-# Menyiapkan data untuk grafik
+# Ekstrak nilai x dan y untuk plotting
 x_values, y_values = zip(*points)
 
 # Membuat plot
 plt.plot(x_values, y_values, marker='o')
-plt.title('Garis antara titik (30, 4) dan (4, 30) dengan Algoritma DDA')
-plt.xlim(0, 35)
-plt.ylim(0, 35)
+plt.title('Garis antara titik (30, 20) dan (37, 27) dengan Algoritma DDA')
+plt.xlim(0, 40)
+plt.ylim(0, 40)
 plt.grid()
 plt.xlabel('X')
 plt.ylabel('Y')
