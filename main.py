@@ -27,8 +27,8 @@ def dda(x1, y1, x2, y2):
     return points
 
 # Titik awal dan akhir
-x1, y1 = 30, 4
-x2, y2 = 4, 30
+x1, y1 = 30, 20
+x2, y2 = 37, 27
 
 # Menggambar garis
 points = dda(x1, y1, x2, y2)
